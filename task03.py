@@ -17,11 +17,12 @@ def function(d, e):
     :param e: units
     :return: word
     """
-
+    # условие для образования составных названий чисел от 21 до 99
     if (d >= 2 and e >= 1) or (d >= 3 and e >= 0):
         word1 = nld[d - 1]
         word2 = nlu[e - 1]
         word = word1 + ' ' + word2
+    # если число до 20 включительно, то просто вывод названия из списка
     else:
         word = nlu[a - 1]
     return word
