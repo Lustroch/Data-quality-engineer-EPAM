@@ -4,7 +4,7 @@
 # Перечислять в коде все числа запрещено.
 
 # the beginning of the program
-print('Введите число в интервале 0-99')
+print('Введите число в интервале 1-99')
 num = int(input())
 list_of_uwords = ['один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять',
                   'десять', 'одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать',
@@ -15,26 +15,25 @@ dozens = num // 10  # getting dozens from input num
 units = num % 10  # getting units from input num
 
 
-def function(d, u):
+def function(_dozens, _units):
     """
     Getting dozens and units from input value and translating it into a word
 
-    :param d: dozens
-    :param u: units
+    :param _dozens: dozens
+    :param _units: units
     :return: word
     """
     # num from 21 to 99 include
     if num >= 21:
-        word1 = list_of_dozens[d - 1]
-        word2 = list_of_uwords[u - 1]
+        word1 = list_of_dozens[_dozens-1]
+        word2 = list_of_uwords[_units-1]
         word = word1 + ' ' + word2
         if num % 10 == 0:
             word = word1
     # num from 1 to  include
     else:
-        word = list_of_uwords[num - 1]
+        word = list_of_uwords[num-1]
     return word
 
 
 print(function(dozens, units))
-# the end of the program
