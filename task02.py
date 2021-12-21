@@ -29,4 +29,3 @@ words_to_num = {'ноль': 0,
                 'восемнадцать': 18}
 result = words_to_num[dig1]+words_to_num[dig2]  # sum of numbers from a words_to_num by keys
 print(list_of_num[result])
-# the end of the program
