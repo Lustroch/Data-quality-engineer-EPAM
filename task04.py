@@ -36,17 +36,16 @@ ending = 'Телевизор надо, надо, ведь у нас такое �
 # output 8 couplets
 for couplet in range(len(animals_list)):
     # calling grandma to buy someone twice
-    for twice1 in range(2):
+    for _ in range(2):
         print(grandma_call, animals_list[couplet] + '!')
     # repeating sounds of the current animal and the previous ones
-    for sounds in range(couplet + 1, 0, -1):
+    for sounds in range(couplet+1, 0, -1):
         counter = sounds - 1
         print(animal_sound[counter], end='')
         counter -= 1
     print()
     counter = 0
 # calling grandma to buy a TV for some reason
-for twice2 in range(2):
+for _ in range(2):
     print(pre_ending, end='')
 print(ending)
-# the end of the program
