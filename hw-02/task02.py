@@ -19,8 +19,8 @@ class Product(object):
     list = []
 
     def __init__(self, price, number):
-        self.p = price  # for the 1 unit
-        self.n = number
+        self.price = price  # for the 1 unit
+        self.number = number
         self.__class__.list.append(self.p)
 
     def info(self):
