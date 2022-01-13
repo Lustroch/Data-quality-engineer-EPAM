@@ -21,7 +21,7 @@ class Product:
     def __init__(self, price, number):
         self.price = price  # for the 1 unit
         self.number = number
-        self.__class__.list.append(self.p)
+        Product.list.append(self.p)
 
     def info(self):
         """Return the good's basis info"""
