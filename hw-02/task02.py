@@ -14,7 +14,7 @@
 # Сравните несколько товаров между собой.
 
 
-class Product(object):
+class Product:
     """properties and methods for any household appliance product"""
     list = []
 
