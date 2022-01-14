@@ -12,27 +12,43 @@
 # и
 # 2) в каком направлении он двигался каждую секунду.
 
+# Приложение должно состоять из двух классов. Первый класс наполните характеристиками и методами лыжника. Второй класс
+# используйте для параметров движения. Управление программой и вывод результатов производите в основной функции main.
+
 import random
+
+
+class Directions:
+
+    def __init__(self, tacks, straight):
+        self.tacks = tacks
+        self.straight = straight
+
+    def west_east(self):
+        return self.tacks
+
+    def south(self):
+        return self.straight
 
 
 class Skier:
 
-    def __init__(self, speed_tacks, speed_straight):
-        self.st = speed_tacks
-        self.ss = speed_straight
+    def __init__(self, name):
+        self.name = name
 
-    def random_distance(self, seconds):
-        l_of_dir = ['south', 'west', 'east']  # list of directions
+    def ski_run(self, seconds):
+        directions = ['south', 'west', 'east']  # list of directions
         distance = 0
         for i in range(1, seconds + 1):
-            dir = l_of_dir[random.randint(0, len(l_of_dir)-1)]
+            dir = directions[random.randint(0, len(directions)-1)]
             if dir == ('west' or 'east'):
-                distance += self.st
+                distance += Directions.west_east(speed_of_directions)
             else:
-                distance += self.ss
+                distance += Directions.south(speed_of_directions)
             print(i, 'second direction was', dir)
         print('Total distance is ', distance)
 
 
-michel = Skier(1, 5)
-michel.random_distance(17)
+speed_of_directions = Directions(1, 5)
+michel = Skier('Michel')
+michel.ski_run(17)

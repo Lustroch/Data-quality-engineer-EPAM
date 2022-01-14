@@ -16,59 +16,60 @@
 
 class Product:
     """properties and methods for any household appliance product"""
-    list = []
+    list_of_products = []
 
-    def __init__(self, price, number):
+    def __init__(self, price, power):
         self.price = price  # for the 1 unit
-        self.number = number
-        Product.list.append(self.p)
+        self.power = power
+        Product.list_of_products.append(self.price)
 
     def info(self):
         """Return the good's basis info"""
-        return self.p, self.n
+        return print('The price of this model is', self.price, "rubles, and it's power is", self.power, 'kW')
 
-    def cost(self, amount):
-        """Cost per number of goods"""
-        return self.p * amount
+    def ecology(self):
+        """Shows how much electricity the product consumes per day"""
+
+        return print('It consumes ', self.power*24, ' kW per day ')
 
     @staticmethod
     # avg_price
     def func():
-        return sum(Product.list) / len(Product.list)
+        return print("Average price is", sum(Product.list_of_products) / len(Product.list_of_products))
 
 
 class TV(Product):
 
-    def __init__(self, price, number, screen_size, frequency):
-        super().__init__(price, number)
-        self.ss = screen_size
-        self.freq = frequency
+    def __init__(self, price, power, screen_size, frequency):
+        super().__init__(price, power)
+        self.screen_size = screen_size
+        self.frequency = frequency
 
     def gaming(self):
-        if self.freq >= 120:
+        if self.frequency >= 120:
             return True
         else:
             return False
 
     def __eq__(self, other):
-        # comparesation TV sizes
+        # comparison TV sizes
         if isinstance(other, TV):
-            return self.ss == other.ss
+            return self.screen_size == other.screen_size
         return NotImplemented
 
 
 class Refrigerator(Product):
 
-    def __init__(self, price, number, defrosting, freezer):
-        super().__init__(price, number)
-        self.defr = defrosting
-        self.fr = freezer
+    def __init__(self, price, power, defrosting, freezer):
+        super().__init__(price, power)
+        self.defrosting = defrosting
+        self.freezer = freezer
 
     def ice_cream(self):
-        if self.fr:
-            return True
+        if self.freezer:
+            return print("Yes, you can store an ice cream here")
         else:
-            return False
+            return print("So sorry, but you can't store ice cream here :(")
 
     def __eq__(self, other):
         # comparison capability ice cream storage
@@ -77,10 +78,10 @@ class Refrigerator(Product):
         return NotImplemented
 
 
-samsung_tv = TV(67000, 6, 50, 60)
-lg_tv = TV(10000, 10, 50, 120)
-indesit_ref = Refrigerator(25000, 9, 'Non frost', True)
-bosch_ref = Refrigerator(35000, 12, 'Frost', False)
+samsung_tv = TV(67000, 0.25, 50, 60)
+lg_tv = TV(10000, 0.15, 50, 120)
+indesit_ref = Refrigerator(25000, 0.3, 'Non frost', True)
+bosch_ref = Refrigerator(35000, 0.5, 'Frost', False)
 
 print(Product.func())
 print(samsung_tv == lg_tv)
