@@ -46,10 +46,7 @@ class TV(Product):
         self.frequency = frequency
 
     def gaming(self):
-        if self.frequency >= 120:
-            return True
-        else:
-            return False
+        return self.frequency >= 120
 
     def __eq__(self, other):
         # comparison TV sizes
