@@ -59,7 +59,6 @@ class TV(Product):
 
 
 class Refrigerator(Product):
-
     def __init__(self, price, power, defrosting, freezer):
         super().__init__(price, power)
         self.defrosting = defrosting
