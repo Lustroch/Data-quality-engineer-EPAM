@@ -29,7 +29,6 @@ class Product:
 
     def ecology(self):
         """Shows how much electricity the product consumes per day"""
-
         return print('It consumes ', self.power*24, ' kW per day ')
 
     @staticmethod
