@@ -37,7 +37,6 @@ class Product:
 
 
 class TV(Product):
-
     def __init__(self, price, power, screen_size, frequency):
         super().__init__(price, power)
         self.screen_size = screen_size
