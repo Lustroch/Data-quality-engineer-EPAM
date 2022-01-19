@@ -33,8 +33,7 @@ class Product:
         return print('It consumes ', self.power*24, ' kW per day ')
 
     @staticmethod
-    # avg_price
-    def func():
+    def avg_price():
         return print("Average price is", sum(Product.list_of_products) / len(Product.list_of_products))
 
 
