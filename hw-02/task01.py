@@ -43,7 +43,6 @@ class Student:
 
     def recruitment(self):
         """Recruiment student for work"""
-
         if self.sql and self.linux and self.python and self.soft_skills >= 3:
             return print(self.name, self.sec_name, 'is hired')
         else:
