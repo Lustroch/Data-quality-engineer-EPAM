@@ -33,7 +33,6 @@ class Student:
 
     def enrollment_in_a_course(self):
         """Making a logical attribute that the Student is learning now at the training centre"""
-
         self.is_learning = True
 
     def training(self, sql, linux, python):
