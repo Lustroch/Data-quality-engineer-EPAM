@@ -46,7 +46,7 @@ class Skier:
             else:
                 distance += Directions.south(speed_of_directions)
             print(i, 'second direction was', dir)
-        print('Total distance is ', distance)
+        print(f'Total distance {self.name} passed is ', distance)
 
 
 speed_of_directions = Directions(1, 5)
