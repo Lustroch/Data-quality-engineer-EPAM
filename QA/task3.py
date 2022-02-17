@@ -1,3 +1,13 @@
+# Создайте аналогичный тест из п.3 предыдущего задания(
+# ...
+# # 3) Проверка тела ответа (response body):
+# # - the content of the response body is the array of 10 users (JSON)
+# # - Tests should be done using the provided REST web-service.
+# ...
+# )
+# но вместо отправки GET-запроса, создайте Mock, возвращающий список из 10 пользователей.
+
+
 import pytest
 import requests
 from unittest import TestCase, mock
