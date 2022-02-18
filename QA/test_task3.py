@@ -6,7 +6,9 @@
 # ...
 # )
 # но вместо отправки GET-запроса, создайте Mock, возвращающий список из 10 пользователей.
-from mock import mock
+
+import requests
+from unittest.mock import patch
 
 user_list = [
     {
@@ -240,10 +242,11 @@ user_list = [
         }
     }
 ]
-mock.user_list = user_list
+
+with patch('requests.get') as mock_request_get:
+    mock_request_get.return_value.json.return_value = user_list
+    response = requests.get('')
 
 
-class TestIntegration:
-    @staticmethod
-    def test_response_body():
-        assert len(mock.user_list) == 10
+def test_response_body():
+    assert len(response.json()) == 10
